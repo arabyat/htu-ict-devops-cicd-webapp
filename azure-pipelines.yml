@@ -10,17 +10,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: ls /home
+- script: echo "Hello pipe line M"
   displayName: 'Run a one-line script'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-
 - task: SSH@0
   inputs:
     sshEndpoint: 'auser@13.82.64.79'
     runOptions: 'commands'
-    commands: 'ls /home'
+    commands: 'echo "Hello VM"'
     readyTimeout: '20000'
