@@ -19,6 +19,6 @@ steps:
   inputs:
     sshEndpoint: 'auser@13.82.64.79'
     runOptions: 'commands'
-    commands: 'mkdir test101'
+    commands: 'rm -rf test101'
     readyTimeout: '20000'
 ############################################################################
