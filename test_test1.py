@@ -1,5 +1,5 @@
 print('Habbeeeeedeh')
-preeent ("HE")
+print ("HE HE")
 for i in range (5):
   print (i)
   
