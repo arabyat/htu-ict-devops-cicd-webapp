@@ -9,7 +9,18 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+
 steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+    addToPath: true
+    architecture: 'x64'
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'filePath'
+    scriptPath: 'hello.py'
+
 - script: echo "Hello pipe line M"
   displayName: 'Run a one-line script'
 
