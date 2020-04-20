@@ -19,6 +19,7 @@ steps:
   inputs:
     sshEndpoint: 'auser@13.82.64.79'
     runOptions: 'commands'
-    commands: 'rm -rf test101'
+    commands: 'ls'
     readyTimeout: '20000'
 ############################################################################
+
