@@ -19,7 +19,7 @@ steps:
 - task: PythonScript@0
   inputs:
     scriptSource: 'filePath'
-    scriptPath: 'hello.py'
+    scriptPath: 'test_test1.py'
 
 - script: echo "Hello pipe line M"
   displayName: 'Run a one-line script'
