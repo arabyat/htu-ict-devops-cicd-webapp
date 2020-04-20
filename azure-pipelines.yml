@@ -6,6 +6,16 @@ pool:
 ############################################################################
 steps:
 ############################################################################
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+    addToPath: true
+    architecture: 'x64'
+############################################################################
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'filePath'
+    scriptPath: 'test_test1.py'
 ############################################################################
 - script: echo "Hello pipe line M"
   displayName: 'Run a one-line script'
@@ -19,7 +29,7 @@ steps:
   inputs:
     sshEndpoint: 'auser@13.82.64.79'
     runOptions: 'commands'
-    commands: 'ls'
+    commands: 'rm -rf test'
     readyTimeout: '20000'
 ############################################################################
 
