@@ -1,36 +1,23 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - master
-
 pool:
   vmImage: 'ubuntu-latest'
-
-
+############################################################################
 steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.x'
-    addToPath: true
-    architecture: 'x64'
-- task: PythonScript@0
-  inputs:
-    scriptSource: 'filePath'
-    scriptPath: 'test_test1.py'
-
+############################################################################
+############################################################################
 - script: echo "Hello pipe line M"
   displayName: 'Run a one-line script'
-
+############################################################################
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+############################################################################
 - task: SSH@0
   inputs:
     sshEndpoint: 'auser@13.82.64.79'
     runOptions: 'commands'
     commands: 'echo "Hello VM"'
     readyTimeout: '20000'
+############################################################################
