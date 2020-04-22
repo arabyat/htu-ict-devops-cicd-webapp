@@ -59,4 +59,6 @@ steps:
       source test102/bin/activate
       pip3 install -r requirements.txt
       pip3 list --format=legacy
+      pip3 install gunicorn
+      gunicorn --bind=0.0.0.0:5459 --workers=4 hello:app
     readyTimeout: '20000'
