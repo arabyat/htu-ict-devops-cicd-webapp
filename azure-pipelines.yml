@@ -59,5 +59,4 @@ steps:
       source test102/bin/activate
       pip3 install -r requirements.txt
       pip3 list --format=legacy
-      deactivate
     readyTimeout: '20000'
