@@ -32,4 +32,9 @@ steps:
     commands: 'rm -rf test'
     readyTimeout: '20000'
 ############################################################################
-
+- script: |
+    sudo apt-get install python3-pip
+    python3 -m venv test102
+    source test102/bin/activate
+    pip3 list
+    displayName: 'envv'
