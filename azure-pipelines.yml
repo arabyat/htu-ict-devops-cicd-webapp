@@ -63,12 +63,11 @@ steps:
     sshEndpoint: 'auser@13.82.64.79'
     runOptions: 'commands'
     commands: |
-      sudo apt-get install python3-venv
-      sudo apt-get install python3-pip
+      sudo apt-get install -y python3-venv
+      sudo apt-get install -y python3-pip
       python3 -m venv test102
       source test102/bin/activate
       pip3 install -r requirements.txt
       pip3 list --format=legacy
       pip3 install gunicorn
-      gunicorn --bind=0.0.0.0:5459 --workers=4 hello:app
     readyTimeout: '20000'
