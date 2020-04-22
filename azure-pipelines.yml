@@ -36,5 +36,8 @@ steps:
     python -m pip install --upgrade pip
     python3 -m venv test102
     source test102/bin/activate
+    pip3 install -r requirements.txt
+    pip3 list
+    deactivate
     pip3 list
   displayName: 'envv'
