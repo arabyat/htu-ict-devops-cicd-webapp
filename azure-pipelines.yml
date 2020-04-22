@@ -40,3 +40,23 @@ steps:
     pip3 list
     deactivate
   displayName: 'Edit Envv'
+############################################################################
+- task: CopyFilesOverSSH@0
+  inputs:
+    sshEndpoint: 'auser@13.82.64.79'
+    contents: 'requirements.txt'
+    targetFolder: '/home/auser'
+    readyTimeout: '20000'
+############################################################################
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'auser@13.82.64.79'
+    runOptions: 'commands'
+    commands: |
+      python -m pip install --upgrade pip
+      python3 -m venv test102
+      source test102/bin/activate
+      pip3 install -r requirements.txt
+      pip3 list
+      deactivate
+    readyTimeout: '20000'
